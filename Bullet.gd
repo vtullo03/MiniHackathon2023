@@ -13,5 +13,7 @@ func _process(delta):
 func _on_body_entered(body):
 	if body is TileMap:
 		queue_free()
-	else:
+	elif body.is_in_group("Player2") && is_in_group("Player1"):
+		body.queue_free()
+	elif body.is_in_group("Player1") && is_in_group("Player2"):
 		body.queue_free()

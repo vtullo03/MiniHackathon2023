@@ -8,4 +8,6 @@ func _ready():
 
 
 func _on_body_exited(body):
-	body.queue_free()
+	if (body.is_in_group("Player")):
+		body.queue_free()
+		get_tree().change_scene_to_file("res://MainMenu.tscn")

@@ -12,13 +12,14 @@ var has_fired = false
 
 func fire():
 	var bullet = bullet_object.instantiate()
+	bullet.add_to_group("Player2")
 	bullet.position = position
 	bullet.rotation = rotation
 	get_tree().get_root().add_child.call_deferred(bullet)
 
 func get_input():
-	rotation_direction = Input.get_axis("move_left2", "move_right2")
-	velocity = transform.x * Input.get_axis("move_down2", "move_up2") * speed
+	rotation_direction = Input.get_axis("move_left", "move_right")
+	velocity = transform.x * Input.get_axis("move_down", "move_up") * speed
 	if Input.is_action_pressed("player2_shoot") && (!has_fired):
 		fire()
 		has_fired = true
@@ -36,8 +37,3 @@ func _process(delta):
 		if (reload_timer <= 0):
 			reload_timer = RELOAD_TIME
 			has_fired = false
-			
-func _on_Area2D_body_exit(body):
-	if body.is_in_group("Player"):
-		body.queue_free()
-		print(str('dead'))

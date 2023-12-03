@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://kotpo8hnogdk"]
 
 [ext_resource type="Script" path="res://MainMenu.gd" id="1_vw6t7"]
-[ext_resource type="PackedScene" uid="uid://b55cvnksx8b5q" path="res://tilemap.tscn" id="2_75vvk"]
+[ext_resource type="PackedScene" uid="uid://bqktt57ri71jp" path="res://tilemap.tscn" id="2_75vvk"]
 [ext_resource type="Texture2D" uid="uid://ecq51jeb8rw0" path="res://tank assets/PNG/Hulls_Color_D/Hull_01.png" id="3_5lxde"]
 [ext_resource type="Texture2D" uid="uid://bt8p8wa4o0o87" path="res://tank assets/PNG/Hull_01.png" id="4_wh8l6"]
 
