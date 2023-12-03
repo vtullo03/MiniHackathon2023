@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://crbjsj12jn577"]
+[gd_scene load_steps=4 format=3 uid="uid://dstm0ukc6uj36"]
 
 [ext_resource type="Script" path="res://Player2.gd" id="1_xjkt0"]
 [ext_resource type="Texture2D" uid="uid://ecq51jeb8rw0" path="res://tank assets/PNG/Hulls_Color_D/Hull_01.png" id="2_2f8pb"]
@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r55px"]
 size = Vector2(176, 261.143)
 
-[node name="Player2" type="CharacterBody2D"]
+[node name="Player2" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_xjkt0")
 
 [node name="Hull01" type="Sprite2D" parent="."]
