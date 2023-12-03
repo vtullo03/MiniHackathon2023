@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bqktt57ri71jp"]
+[gd_scene load_steps=16 format=3 uid="uid://b55cvnksx8b5q"]
 
 [ext_resource type="Texture2D" uid="uid://dxixxsee0srwf" path="res://assets/Tileset2.png" id="1_0m432"]
 [ext_resource type="Script" path="res://Border.gd" id="1_nmoih"]
@@ -4905,6 +4905,7 @@ position = Vector2(572, 349)
 texture = ExtResource("4_1hxdx")
 
 [node name="Circle" type="Sprite2D" parent="TileMap"]
+visible = false
 position = Vector2(568, 347)
 scale = Vector2(3.75, 3.75)
 texture = ExtResource("3_i1lbu")

@@ -13,3 +13,5 @@ func _process(delta):
 func _on_body_entered(body):
 	if body is TileMap:
 		queue_free()
+	else:
+		body.queue_free()

@@ -26,8 +26,10 @@ func get_input():
 func _physics_process(delta):
 	get_input()
 	rotation += rotation_direction * rotation_speed * delta
+	#var collision_info = move_and_collide(velocity * delta)
+	#if collision_info:
+	#	queue_free()
 	move_and_slide()
-
 func _process(delta):
 	if (has_fired):
 		reload_timer -= delta
