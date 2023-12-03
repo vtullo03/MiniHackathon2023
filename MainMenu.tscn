@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://3aagvdkljalk"]
+[gd_scene load_steps=5 format=3 uid="uid://3aagvdkljalk"]
 
 [ext_resource type="Script" path="res://MainMenu.gd" id="1_vw6t7"]
 [ext_resource type="PackedScene" uid="uid://bqktt57ri71jp" path="res://tilemap.tscn" id="2_75vvk"]
+[ext_resource type="Texture2D" uid="uid://ecq51jeb8rw0" path="res://tank assets/PNG/Hulls_Color_D/Hull_01.png" id="3_5lxde"]
+[ext_resource type="Texture2D" uid="uid://bt8p8wa4o0o87" path="res://tank assets/PNG/Hulls_Color_A/Hull_01.png" id="4_wh8l6"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -14,6 +16,18 @@ script = ExtResource("1_vw6t7")
 
 [node name="Node2D" parent="." instance=ExtResource("2_75vvk")]
 position = Vector2(0, 1)
+
+[node name="Hull01" type="Sprite2D" parent="."]
+position = Vector2(504, 360)
+rotation = 1.09099
+scale = Vector2(0.461969, 0.461969)
+texture = ExtResource("3_5lxde")
+
+[node name="Hull02" type="Sprite2D" parent="."]
+position = Vector2(632, 336)
+rotation = -1.99485
+scale = Vector2(0.461969, 0.461969)
+texture = ExtResource("4_wh8l6")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
