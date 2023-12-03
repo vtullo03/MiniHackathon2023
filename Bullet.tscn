@@ -6,15 +6,13 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g1hao"]
 height = 48.0
 
-[node name="Bullet" type="Node2D"]
+[node name="Area2D" type="Area2D"]
 script = ExtResource("1_0478o")
 
 [node name="MediumShell" type="Sprite2D" parent="."]
 rotation = 1.5708
 texture = ExtResource("1_xl08m")
 
-[node name="Area2D" type="Area2D" parent="."]
-rotation = 1.5708
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = -1.5708
 shape = SubResource("CapsuleShape2D_g1hao")
