@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2knddj1jvmgw"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_rqb4w"]
+[ext_resource type="Texture2D" uid="uid://cj3510jnffwsf" path="res://tank assets/PNG/Hulls_Color_A/Hull_02.png" id="2_saey7"]
+[ext_resource type="Texture2D" uid="uid://b5icdt8t3exgs" path="res://tank assets/PNG/Weapon_Color_A/Gun_01.png" id="3_bqsd6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vqsyc"]
+size = Vector2(168, 248)
+
+[node name="Player" type="CharacterBody2D"]
+scale = Vector2(0.35, 0.35)
+script = ExtResource("1_rqb4w")
+
+[node name="Hull03" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("2_saey7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_vqsyc")
+
+[node name="Gun01" type="Sprite2D" parent="."]
+position = Vector2(32, 0)
+rotation = 1.5708
+texture = ExtResource("3_bqsd6")
