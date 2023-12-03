@@ -34,3 +34,8 @@ func _process(delta):
 		if (reload_timer <= 0):
 			reload_timer = RELOAD_TIME
 			has_fired = false
+
+
+
+func _on_area_2d_area_exited(area):
+	print("asdd")

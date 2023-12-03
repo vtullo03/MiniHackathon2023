@@ -1,10 +1,13 @@
-[gd_scene load_steps=16 format=3 uid="uid://bqktt57ri71jp"]
+[gd_scene load_steps=19 format=3 uid="uid://bqktt57ri71jp"]
 
 [ext_resource type="Texture2D" uid="uid://dxixxsee0srwf" path="res://assets/Tileset2.png" id="1_0m432"]
 [ext_resource type="Script" path="res://Border.gd" id="1_nmoih"]
 [ext_resource type="Texture2D" uid="uid://deng3hk1ff38d" path="res://assets/Decorations2.png" id="2_2vqjl"]
 [ext_resource type="Texture2D" uid="uid://b7ib3njiuwylb" path="res://assets/circle.png" id="3_i1lbu"]
 [ext_resource type="Texture2D" uid="uid://dev6x323ahfh0" path="res://assets/circle2.png" id="4_1hxdx"]
+[ext_resource type="Script" path="res://SafeArea.gd" id="6_1brjb"]
+[ext_resource type="PackedScene" uid="uid://c2te8qhgof5e8" path="res://Player1.tscn" id="6_mfyc5"]
+[ext_resource type="PackedScene" uid="uid://dstm0ukc6uj36" path="res://Player2.tscn" id="7_73ycq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x4ea6"]
 texture = ExtResource("1_0m432")
@@ -4847,21 +4850,21 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rubwu"]
-radius = 889.64
+radius = 893.027
 
 [sub_resource type="Animation" id="Animation_vdyes"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:shape:radius")
+tracks/0/path = NodePath("..:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [889.64]
+"values": [Vector2(1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_5uubi"]
@@ -4870,14 +4873,14 @@ length = 5.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:shape:radius")
+tracks/0/path = NodePath("..:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 4.5),
+"times": PackedFloat32Array(0, 5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [889.64, 252.0]
+"values": [Vector2(1, 1), Vector2(0.27, 0.27)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8cr50"]
@@ -4914,11 +4917,12 @@ libraries = {
 "": SubResource("AnimationLibrary_b7j64")
 }
 
-[node name="Area2D" type="Area2D" parent="TileMap"]
+[node name="Area2D" type="Area2D" parent="TileMap" groups=["Circle"]]
+position = Vector2(575, 348)
+script = ExtResource("6_1brjb")
 
 [node name="SafeArea" type="CollisionShape2D" parent="TileMap/Area2D"]
 process_physics_priority = 1
-position = Vector2(573, 349)
 shape = SubResource("CircleShape2D_rubwu")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="TileMap/Area2D"]
@@ -4926,3 +4930,12 @@ root_node = NodePath("../SafeArea")
 libraries = {
 "": SubResource("AnimationLibrary_8cr50")
 }
+
+[node name="Player1" parent="TileMap" instance=ExtResource("6_mfyc5")]
+position = Vector2(137, 339)
+
+[node name="Player2" parent="TileMap" instance=ExtResource("7_73ycq")]
+position = Vector2(1025, 346)
+
+[connection signal="area_exited" from="TileMap/Area2D" to="TileMap/Area2D" method="_on_area_exited"]
+[connection signal="body_exited" from="TileMap/Area2D" to="TileMap/Area2D" method="_on_body_exited"]

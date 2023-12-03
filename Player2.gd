@@ -34,3 +34,8 @@ func _process(delta):
 		if (reload_timer <= 0):
 			reload_timer = RELOAD_TIME
 			has_fired = false
+			
+func _on_Area2D_body_exit(body):
+	if body.is_in_group("Player"):
+		body.queue_free()
+		print(str('dead'))

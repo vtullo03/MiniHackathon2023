@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://doyfugtafxpfm"]
+[gd_scene load_steps=4 format=3 uid="uid://c2te8qhgof5e8"]
 
 [ext_resource type="Script" path="res://Player1.gd" id="1_ib62o"]
 [ext_resource type="Texture2D" uid="uid://bt8p8wa4o0o87" path="res://tank assets/PNG/Hull_01.png" id="2_5b1dp"]
@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r55px"]
 size = Vector2(176, 261.143)
 
-[node name="Player1" type="CharacterBody2D"]
+[node name="Player1" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_ib62o")
 
 [node name="Hull01" type="Sprite2D" parent="."]
@@ -19,3 +19,12 @@ position = Vector2(-2.3, 1.37882e-07)
 rotation = 1.5708
 scale = Vector2(0.35, 0.35)
 shape = SubResource("RectangleShape2D_r55px")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+rotation = 1.5708
+scale = Vector2(0.35, 0.35)
+polygon = PackedVector2Array(-35, -120.9, -22, -108.9, -22, -89, 22, -89, 22, -110, 24.1, -110, 36.1, -123, 72.8, -123, 87, -108.8, 87, 119, 84.9, 119, 76.7, 128, 32.3, 128, 27.1, 122, -26.2, 122, -32.2, 128, -76, 128, -87, 117.9, -87, -108.9, -74, -120.9, -74, -123, -35, -123)
+
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
