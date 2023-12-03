@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://d1f171e6iebnl"]
+[gd_scene load_steps=3 format=3 uid="uid://d1f171e6iebnl"]
 
 [ext_resource type="PackedScene" uid="uid://cuanek0gdo8vr" path="res://Player.tscn" id="1_v6qr6"]
+[ext_resource type="PackedScene" uid="uid://b06h030lahkry" path="res://tilemap.tscn" id="2_yh21x"]
 
 [node name="Level" type="Node2D"]
 
+[node name="Environment" parent="." instance=ExtResource("2_yh21x")]
+
 [node name="Player" parent="." instance=ExtResource("1_v6qr6")]
-position = Vector2(360, 320)
+position = Vector2(136, 328)
