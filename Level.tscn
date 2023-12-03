@@ -1,11 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://d1f171e6iebnl"]
+[gd_scene load_steps=5 format=3 uid="uid://cf46m6ki0f1xl"]
 
-[ext_resource type="PackedScene" uid="uid://cuanek0gdo8vr" path="res://Player.tscn" id="1_v6qr6"]
-[ext_resource type="PackedScene" uid="uid://b06h030lahkry" path="res://tilemap.tscn" id="2_yh21x"]
+[ext_resource type="PackedScene" uid="uid://doyfugtafxpfm" path="res://Player1.tscn" id="2_i41pi"]
+[ext_resource type="PackedScene" uid="uid://bqktt57ri71jp" path="res://tilemap.tscn" id="2_yh21x"]
+[ext_resource type="PackedScene" uid="uid://crbjsj12jn577" path="res://Player2.tscn" id="3_y7vhw"]
+[ext_resource type="AudioStream" uid="uid://dr52s5mg4aenq" path="res://backgroundMusic.mp3" id="4_bm5rb"]
 
 [node name="Level" type="Node2D"]
 
-[node name="Environment" parent="." instance=ExtResource("2_yh21x")]
+[node name="Node2D" parent="." instance=ExtResource("2_yh21x")]
+position = Vector2(2, 1)
 
-[node name="Player" parent="." instance=ExtResource("1_v6qr6")]
-position = Vector2(136, 328)
+[node name="Player1" parent="." instance=ExtResource("2_i41pi")]
+position = Vector2(128, 344)
+
+[node name="Player2" parent="." instance=ExtResource("3_y7vhw")]
+position = Vector2(1032, 344)
+rotation = 3.14159
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_bm5rb")
+autoplay = true

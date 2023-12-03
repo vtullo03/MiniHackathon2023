@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://crbjsj12jn577"]
+
+[ext_resource type="Script" path="res://Player2.gd" id="1_xjkt0"]
+[ext_resource type="Texture2D" uid="uid://ecq51jeb8rw0" path="res://tank assets/PNG/Hulls_Color_D/Hull_01.png" id="2_2f8pb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r55px"]
+size = Vector2(176, 261.143)
+
+[node name="Player2" type="CharacterBody2D"]
+script = ExtResource("1_xjkt0")
+
+[node name="Hull01" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("2_2f8pb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.3, 1.37882e-07)
+rotation = 1.5708
+scale = Vector2(0.35, 0.35)
+shape = SubResource("RectangleShape2D_r55px")
