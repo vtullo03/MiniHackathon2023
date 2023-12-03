@@ -1,68 +1,11 @@
-<<<<<<< HEAD
 [gd_scene load_steps=3 format=3 uid="uid://d1f171e6iebnl"]
 
 [ext_resource type="PackedScene" uid="uid://cuanek0gdo8vr" path="res://Player.tscn" id="1_v6qr6"]
 [ext_resource type="PackedScene" uid="uid://b06h030lahkry" path="res://tilemap.tscn" id="2_yh21x"]
-=======
-[gd_scene load_steps=8 format=3 uid="uid://d1f171e6iebnl"]
-
-[ext_resource type="Script" path="res://Player1.gd" id="1_0hgj0"]
-[ext_resource type="Texture2D" uid="uid://cj3510jnffwsf" path="res://tank assets/PNG/Hulls_Color_A/Hull_02.png" id="1_ad7vq"]
-[ext_resource type="Script" path="res://Player2.gd" id="3_sk8gx"]
-[ext_resource type="Texture2D" uid="uid://ciddi2kt8llcu" path="res://tank assets/PNG/Hulls_Color_D/Hull_02.png" id="4_ljrla"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1pvm8"]
-size = Vector2(176, 252)
-
-[sub_resource type="GDScript" id="GDScript_4ncdc"]
-script/source = "extends CollisionShape2D
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-"
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1wjug"]
-size = Vector2(170, 248)
->>>>>>> ilayda
 
 [node name="Level" type="Node2D"]
-position = Vector2(445, 309)
 
-<<<<<<< HEAD
 [node name="Environment" parent="." instance=ExtResource("2_yh21x")]
 
 [node name="Player" parent="." instance=ExtResource("1_v6qr6")]
 position = Vector2(136, 328)
-=======
-[node name="Player1" type="CharacterBody2D" parent="."]
-position = Vector2(86, 9)
-script = ExtResource("1_0hgj0")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player1"]
-position = Vector2(-267, 28)
-shape = SubResource("RectangleShape2D_1pvm8")
-script = SubResource("GDScript_4ncdc")
-
-[node name="Hull02" type="Sprite2D" parent="Player1/CollisionShape2D"]
-position = Vector2(0, -1)
-texture = ExtResource("1_ad7vq")
-
-[node name="Player2" type="CharacterBody2D" parent="."]
-position = Vector2(27, 3)
-script = ExtResource("3_sk8gx")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player2"]
-position = Vector2(219, 68)
-shape = SubResource("RectangleShape2D_1wjug")
-
-[node name="Hull02" type="Sprite2D" parent="Player2/CollisionShape2D"]
-position = Vector2(-3, -4)
-texture = ExtResource("4_ljrla")
->>>>>>> ilayda
